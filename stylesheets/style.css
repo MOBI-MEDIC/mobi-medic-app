@@ -56,7 +56,7 @@ body {
 .main .sidebar::after {
   content: "";
   position: absolute;
-  background-color: var(--main1);
+  background-color: var(--main3);
   width: 10%;
   height: 5px;
   bottom: 0;
@@ -92,12 +92,60 @@ body {
   text-transform: capitalize;
 }
 
+.main .sidebar .sidebar-breadcrumb h3 i {
+  margin: 0 10px 0 0;
+}
+
 .main .sidebar .sidebar-content {
   position: relative;
   background-color: var(--main3);
   width: 100%;
-  height: 95%;
+  height: 90%;
+  padding: 10px;
   border-radius: 15px;
+}
+
+.main .sidebar .sidebar-content::before {
+  content: "";
+  position: absolute;
+  background-color: var(--bg2);
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.main .sidebar .sidebar-content .mobi-medic-logo {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding: 10px 0;
+  margin: 0 0 20px;
+}
+
+.main .sidebar .sidebar-content .mobi-medic-logo h3 {
+  position: relative;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-white-900);
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 
 .main .body {
