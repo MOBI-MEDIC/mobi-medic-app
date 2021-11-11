@@ -10,6 +10,7 @@
     --main2: #3d5af1;
     --main3: #0e153a;
     --main4: #fc5185;
+    --main5: #070c27;
 
     //  text colors
     --text-black-900: #000000;
@@ -37,6 +38,29 @@
     padding: 0;
 }
 
+button {
+    border: none;
+    outline: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: var(--outer-shadow);
+    box-shadow: var(--outer-shadow);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main1);
+    border-radius: 30px;
+}
+
 //  the body
 body {
     background-color: var(--bg);
@@ -47,9 +71,9 @@ body {
 .main {
     position: relative;
     display: grid;
-    grid-template-columns: 30% auto;
+    grid-template-columns: 25% auto;
     grid-template-rows: auto;
-    column-gap: 10px;
+    column-gap: 20px;
     width: 100%;
     height: 100vh;
     padding: 10px;
@@ -84,6 +108,8 @@ body {
             border-radius: 10px;
             padding: 0 20px;
             margin: 0 0 10px;
+            overflow: visible;
+            z-index: var(--navbar-index);
 
             h3 {
                 color: var(--bg);
@@ -96,6 +122,36 @@ body {
                     margin: 0 10px 0 0;
                 }
             }
+
+            //  the minize button on the sidenav
+            .minimize-nav {
+                position: absolute;
+                @include flex(column);
+                width: 40px;
+                height: 40px;
+                top: 50%;
+                right: -5px;
+                transform: translateY(-50%);
+                border-radius: 50%;
+                z-index: var(--container-index);
+
+                .minimize-nav-btn {
+                    position: relative;
+                    @include flex(row);
+                    background-color: var(--main3);
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                    border: 7px solid var(--bg);
+
+                    i {
+                        position: relative;
+                        font-size: 1rem;
+                        font-weight: 700;
+                        color: var(--main4);
+                    }
+                }
+            }
         }
 
         .sidebar-content {
@@ -105,45 +161,134 @@ body {
             height: 90%;
             padding: 10px;
             border-radius: 15px;
+            overflow-y: hidden;
+            overflow-x: hidden;
+            z-index: var(--navbar-index);
 
             &::before {
                 content: "";
                 position: absolute;
-                background-color: var(--bg2);
-                width: 50px;
-                height: 50px;
-                top: 50%;
-                left: 50%;
+                background-color: transparent;
+                width: 300px;
+                height: 300px;
+                top: 0;
+                left: 0;
                 border-radius: 50%;
+                border: 30px solid var(--bg2);
                 transform: translate(-50%, -50%);
+                opacity: 0.2;
+                z-index: -1;
             }
 
+            //  the mobi-medic-logo
             .mobi-medic-logo {
                 position: relative;
                 @include flex(row);
+                //background-color: red;
                 width: 100%;
                 height: auto;
                 padding: 10px 0;
-                margin: 0 0 20px;
 
                 h3 {
                     position: relative;
                     font-weight: 700;
-                    font-size: 1.2rem;
+                    font-size: 1rem;
                     color: var(--text-white-900);
                     text-transform: uppercase;
                     letter-spacing: 3px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    background-color: var(--main4);
+                    width: 5px;
+                    height: 5px;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 50%;
+                }
+            }
+
+            .sidebar-links-container {
+                position: relative;
+                width: 100%;
+                height: 90%;
+                overflow: auto;
+
+                .side-links-header {
+                    position: relative;
+                    color: var(--text-white-300);
+                    font-size: 0.9rem;
+                }
+
+                //  the side nav links
+                .sidebar-links-holder {
+                    position: relative;
+                    width: 100%;
+                    height: fit-content;
+                    padding: 10px;
+                    overflow: auto;
+
+                    .side-link {
+                        position: relative;
+                        width: 100%;
+                        height: 35px;
+                        margin: 10px auto;
+
+                        a {
+                            position: absolute;
+                            @include flex-left(row);
+                            text-decoration: none;
+                            color: var(--text-white-700);
+                            letter-spacing: 1px;
+                            width: 100%;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            padding: 0 20px;
+
+                            i {
+                                margin: 0 10px 0 0;
+                            }
+
+                            &.active-link {
+                                background-color: var(--main5);
+                                box-shadow: var(--outer-shadow);
+
+                                i {
+                                    color: var(--main4);
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
     }
 
     //  the main body
-    .body {
+    .main-body {
         position: relative;
         background-color: var(--bg2);
         width: 100%;
         height: 100%;
         border-radius: 10px;
+    }
+}
+
+//  the pointing animation on the minimize btn
+@keyframes point {
+    0% {
+        transform: translate(0, -50%);
+    }
+
+    50% {
+        transform: translate(-5px, -50%);
+    }
+
+    100% {
+        transform: translate(0, -50%);
     }
 }
