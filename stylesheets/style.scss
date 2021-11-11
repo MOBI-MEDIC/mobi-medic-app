@@ -1,0 +1,117 @@
+@import "mixins/mixins";
+
+:root {
+
+    //  default colors for the website
+    --bg: #e2f3f5;
+
+    --aqua: #22d1ee;
+    --blue: #3d5af1;
+    --dark-blue: #0e153a;
+
+
+    //  shadow
+    --outer-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    --outer-shadow-0: 0 0 0 rgba(0, 0, 0, 0.2);
+}
+
+//  global styling
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+//  the body
+body {
+    background-color: var(--dark-blue);
+    color: white;
+    width: 100%;
+    height: 100vh;
+}
+
+//  the header
+.header {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+
+    .btn {
+        position: relative;
+        background-color: var(--aqua);
+        color: var(--dark-blue);
+        border: none;
+        outline: none;
+        padding: 10px 30px;
+        margin: 0 10px;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+
+        &:nth-child(2) {
+            background-color: transparent;
+            color: var(--bg);
+        }
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+//  main body 
+.main {
+    position: relative;
+    @include flex(column);
+    width: 90%;
+    height: 80vh;
+    margin: auto;
+    overflow: hidden;
+
+    h1 {
+        color: var(--bg);
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin: 10px 0;
+    }
+
+    h3 {
+        color: var(--bg);
+        text-transform: capitalize;
+        letter-spacing: 4px;
+        margin: 10px 0;
+    }
+
+    .circle {
+        position: absolute;
+        background-color: var(--dark-blue);
+        width: 150px;
+        height: 150px;
+        bottom: -75px;
+        left: 50%;
+        transform: translateX(-50%);
+        border: 20px solid var(--aqua);
+        border-radius: 50%;
+        animation: circle 1.5s ease forwards infinite;
+    }
+}
+
+@keyframes circle {
+    0% {
+        width: 150px;
+        height: 150px;
+    }
+
+    50% {
+        width: 100px;
+        height: 100px;
+    }
+
+    100% {
+        width: 150px;
+        height: 150px;
+    }
+}
