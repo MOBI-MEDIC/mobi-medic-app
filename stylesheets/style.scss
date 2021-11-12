@@ -286,6 +286,41 @@ body {
     }
 }
 
+//header section
+.header{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 10px;
+    border-bottom: #fc5185 solid 1px;
+    .sid{
+        color: #fc5185;
+    }
+    .choices{
+        width: 300px;
+        margin-top: 8px;
+        display: grid;
+        grid-template-columns:1fr 1fr 1fr;
+        grid-gap:5px;
+    
+    }
+    .choice{
+        background-color: var(--main3);
+        color: var(--text-white-700);
+        padding: 5px;
+        border-radius:14px;
+        text-align: center;
+    }
+    img{
+        height:50px ;
+        width: 50px;
+        border-radius:50%;
+    }
+    .welcome{
+        padding: 10px;
+    }
+}
+
+
 //  the pointing animation on the minimize btn
 @keyframes point {
     0% {

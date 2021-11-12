@@ -331,6 +331,47 @@ body {
   border-radius: 10px;
 }
 
+.header {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+  padding: 10px;
+  border-bottom: #fc5185 solid 1px;
+}
+
+.header .sid {
+  color: #fc5185;
+}
+
+.header .choices {
+  width: 300px;
+  margin-top: 8px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.header .choice {
+  background-color: var(--main3);
+  color: var(--text-white-700);
+  padding: 5px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.header img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.header .welcome {
+  padding: 10px;
+}
+
 @-webkit-keyframes point {
   0% {
     -webkit-transform: translate(0, -50%);
