@@ -43,11 +43,6 @@ button:hover {
   width: 5px;
 }
 
-::-webkit-scrollbar-track {
-  -webkit-box-shadow: var(--outer-shadow);
-  box-shadow: var(--outer-shadow);
-}
-
 ::-webkit-scrollbar-thumb {
   background-color: var(--main1);
   border-radius: 30px;
@@ -107,7 +102,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: var(--main3);
+  background-color: var(--bg2);
   width: 100%;
   height: 5%;
   border-radius: 10px;
@@ -118,7 +113,7 @@ body {
 }
 
 .main .sidebar .sidebar-breadcrumb h3 {
-  color: var(--bg);
+  color: var(--text-black-700);
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 3px;
@@ -174,7 +169,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 7px solid var(--bg);
+  border: 5px solid var(--bg);
 }
 
 .main .sidebar .sidebar-breadcrumb .minimize-nav .minimize-nav-btn i {
@@ -186,7 +181,7 @@ body {
 
 .main .sidebar .sidebar-content {
   position: relative;
-  background-color: var(--main3);
+  background-color: var(--bg2);
   width: 100%;
   height: 90%;
   padding: 10px;
@@ -235,8 +230,8 @@ body {
 .main .sidebar .sidebar-content .mobi-medic-logo h3 {
   position: relative;
   font-weight: 700;
-  font-size: 1rem;
-  color: var(--text-white-900);
+  font-size: 0.9rem;
+  color: var(--text-black-900);
   text-transform: uppercase;
   letter-spacing: 3px;
 }
@@ -263,7 +258,7 @@ body {
 
 .main .sidebar .sidebar-content .sidebar-links-container .side-links-header {
   position: relative;
-  color: var(--text-white-300);
+  color: var(--text-black-300);
   font-size: 0.9rem;
 }
 
@@ -299,8 +294,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  font-size: 0.9rem;
   text-decoration: none;
-  color: var(--text-white-700);
+  color: var(--text-black-700);
   letter-spacing: 1px;
   width: 100%;
   height: 100%;
@@ -315,6 +311,7 @@ body {
 
 .main .sidebar .sidebar-content .sidebar-links-container .sidebar-links-holder .side-link a.active-link {
   background-color: var(--main5);
+  color: var(--text-white-700);
   -webkit-box-shadow: var(--outer-shadow);
           box-shadow: var(--outer-shadow);
 }
@@ -328,6 +325,17 @@ body {
   background-color: var(--bg2);
   width: 100%;
   height: 100%;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.main .main-body .body-header {
+  position: relative;
+  background-color: var(--bg);
+  width: 100%;
+  height: 50px;
+  -webkit-box-shadow: var(--outer-shadow);
+          box-shadow: var(--outer-shadow);
   border-radius: 10px;
 }
 

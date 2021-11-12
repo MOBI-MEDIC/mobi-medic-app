@@ -1,4 +1,5 @@
 @import "mixins/mixins";
+
 @font-face {
     font-family: 'olly';
     src: url('../fonts/Poppins-Regular.ttf');
@@ -40,7 +41,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    
+
 }
 
 button {
@@ -54,11 +55,6 @@ button {
 
 ::-webkit-scrollbar {
     width: 5px;
-}
-
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: var(--outer-shadow);
-    box-shadow: var(--outer-shadow);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -109,7 +105,7 @@ body {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            background-color: var(--main3);
+            background-color: var(--bg2);
             width: 100%;
             height: 5%;
             border-radius: 10px;
@@ -119,7 +115,7 @@ body {
             z-index: var(--navbar-index);
 
             h3 {
-                color: var(--bg);
+                color: var(--text-black-700);
                 font-size: 0.9rem;
                 font-weight: 700;
                 letter-spacing: 3px;
@@ -150,7 +146,7 @@ body {
                     width: 100%;
                     height: 100%;
                     border-radius: 50%;
-                    border: 7px solid var(--bg);
+                    border: 5px solid var(--bg);
 
                     i {
                         position: relative;
@@ -164,7 +160,7 @@ body {
 
         .sidebar-content {
             position: relative;
-            background-color: var(--main3);
+            background-color: var(--bg2);
             width: 100%;
             height: 90%;
             padding: 10px;
@@ -192,7 +188,6 @@ body {
             .mobi-medic-logo {
                 position: relative;
                 @include flex(row);
-                //background-color: red;
                 width: 100%;
                 height: auto;
                 padding: 10px 0;
@@ -200,8 +195,8 @@ body {
                 h3 {
                     position: relative;
                     font-weight: 700;
-                    font-size: 1rem;
-                    color: var(--text-white-900);
+                    font-size: 0.9rem;
+                    color: var(--text-black-900);
                     text-transform: uppercase;
                     letter-spacing: 3px;
                 }
@@ -227,7 +222,7 @@ body {
 
                 .side-links-header {
                     position: relative;
-                    color: var(--text-white-300);
+                    color: var(--text-black-300);
                     font-size: 0.9rem;
                 }
 
@@ -248,8 +243,9 @@ body {
                         a {
                             position: absolute;
                             @include flex-left(row);
+                            font-size: 0.9rem;
                             text-decoration: none;
-                            color: var(--text-white-700);
+                            color: var(--text-black-700);
                             letter-spacing: 1px;
                             width: 100%;
                             height: 100%;
@@ -263,6 +259,7 @@ body {
 
                             &.active-link {
                                 background-color: var(--main5);
+                                color: var(--text-white-700);
                                 box-shadow: var(--outer-shadow);
 
                                 i {
@@ -282,7 +279,17 @@ body {
         background-color: var(--bg2);
         width: 100%;
         height: 100%;
+        padding: 20px;
         border-radius: 10px;
+
+        .body-header {
+            position: relative;
+            background-color: var(--bg);
+            width: 100%;
+            height: 50px;
+            box-shadow: var(--outer-shadow);
+            border-radius: 10px;
+        }
     }
 }
 
