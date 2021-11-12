@@ -400,7 +400,7 @@ body {
             .header-info-cards {
                 position: relative;
                 display: grid;
-                grid-template-columns: repeat(3, auto);
+                grid-template-columns: repeat(3, 32%);
                 grid-template-rows: auto;
                 column-gap: 10px;
                 width: 100%;
@@ -409,7 +409,7 @@ body {
 
                 .info-card {
                     position: relative;
-                    @include flex(row);
+                    @include flex(column);
                     padding: 15px;
                     background-color: var(--main3);
                     color: var(--text-white-900);
