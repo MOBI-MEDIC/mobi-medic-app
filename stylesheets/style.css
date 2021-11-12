@@ -473,9 +473,38 @@ body {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+  border-radius: 50%;
 }
 
 .header .welcome {
+  padding: 10px;
+}
+
+.main-body {
+  margin: auto;
+}
+
+.main-body .info-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(25ch, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+  gap: 2rem;
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 10px;
+}
+
+.main-body .info-card {
+  padding: 15px;
+  background-color: var(--main3);
+  color: var(--text-white-900);
+}
+
+.main-body p {
+  color: #fff;
   padding: 10px;
 }
 

@@ -411,9 +411,32 @@ body {
         height: 50px;
         width: 50px;
         border-radius: 50%;
+        border-radius:50%;
+         
     }
 
     .welcome {
+        padding: 10px;
+    }
+    
+}
+.main-body{
+    margin: auto;
+    .info-cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(25ch, 1fr));
+        gap:2rem;
+        width: 100%;
+        justify-content: center;
+        padding: 10px;
+    }
+    .info-card{
+        padding: 15px;
+        background-color: var(--main3);
+        color: var(--text-white-900);
+    }
+    p{
+        color: #fff;
         padding: 10px;
     }
 }
