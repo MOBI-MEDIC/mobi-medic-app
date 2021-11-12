@@ -329,14 +329,113 @@ body {
   border-radius: 10px;
 }
 
-.main .main-body .body-header {
+.main .main-body .body-navbar {
   position: relative;
-  background-color: var(--bg);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 25% 25% 25% 25%;
+      grid-template-columns: 25% 25% 25% 25%;
   width: 100%;
   height: 50px;
-  -webkit-box-shadow: var(--outer-shadow);
-          box-shadow: var(--outer-shadow);
   border-radius: 10px;
+}
+
+.main .main-body .body-navbar div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main .main-body .body-navbar .search-bar {
+  position: relative;
+  background-color: var(--bg2);
+  width: 100%;
+  height: 100%;
+}
+
+.main .main-body .body-navbar .search-bar #search {
+  position: relative;
+  background-color: var(--bg);
+  width: 170px;
+  height: 30px;
+  border: none;
+  outline: none;
+  padding: 0 20px;
+  border-radius: 30px;
+}
+
+.main .main-body .body-navbar .status {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main .main-body .body-navbar .status h4 {
+  color: var(--text-black-700);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.main .main-body .body-navbar .status h4 span {
+  color: var(--main2);
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+}
+
+.main .main-body .body-navbar .shortcuts {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.main .main-body .body-navbar .shortcuts .shortcut-btns {
+  position: relative;
+  background-color: var(--main3);
+  color: var(--main4);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px;
+}
+
+.main .main-body .body-navbar .user-icon {
+  position: relative;
+  background-color: var(--bg2);
+  width: 100%;
+  height: 100%;
+}
+
+.main .main-body .body-navbar .user-icon img {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 10px 0 0;
+}
+
+.main .main-body .body-navbar .user-icon h3 {
+  color: var(--text-black-700);
+  font-size: 0.9rem;
+}
+
+.main .main-body .body-navbar .user-icon i {
+  color: var(--main3);
+  font-size: 1rem;
+  margin: 0 0 0 10px;
+}
+
+.main .main-body .body-navbar .user-icon:hover {
+  cursor: pointer;
 }
 
 .header {
