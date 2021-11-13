@@ -11,6 +11,8 @@
   --main3: #0e153a;
   --main4: #fc5185;
   --main5: #070c27;
+  --online: lime;
+  --offline: red;
   --text-black-900: #000000;
   --text-black-700: #1a1a1a;
   --text-black-300: #858585;
@@ -377,8 +379,7 @@ body {
   border: none;
   outline: none;
   padding: 0 20px;
-  border-radius: 30px;
-  border-bottom: 2px solid var(--main2);
+  border-bottom: 2px solid var(--text-black-700);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
@@ -400,7 +401,7 @@ body {
 }
 
 .main .main-body .body-navbar .status h4 span {
-  color: var(--main2);
+  color: var(--online);
   font-size: 0.9rem;
   letter-spacing: 2px;
 }
@@ -498,6 +499,8 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 10px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .main .main-body .info-cards .header-info-cards .info-card i {
@@ -511,9 +514,14 @@ body {
           transform: translate(-50%, -50%);
 }
 
+.main .main-body .info-cards .header-info-cards .info-card h4 {
+  color: var(--text-white-700);
+  font-size: 1rem;
+}
+
 .main .main-body .info-cards .header-info-cards .info-card h3 {
-  color: var(--text-white-900);
-  font-size: 2.5rem;
+  color: var(--main1);
+  font-size: 2rem;
   letter-spacing: 3px;
   font-style: italic;
 }
@@ -557,6 +565,11 @@ body {
 
 .main .main-body .info-cards .header-info-cards .info-card .info-card-btn:hover {
   cursor: pointer;
+}
+
+.main .main-body .info-cards .header-info-cards .info-card:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
 }
 
 .header {
