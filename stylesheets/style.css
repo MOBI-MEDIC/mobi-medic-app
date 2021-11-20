@@ -4,8 +4,8 @@
 }
 
 :root {
-  --bg: #e2f3f5;
-  --bg2: #d1e2e4;
+  --bg: #638dc4;
+  --bg2: #e2f3f5;
   --main1: #22d1ee;
   --main2: #3d5af1;
   --main3: #0e153a;
@@ -30,6 +30,131 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+.title-holder-1 {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  margin: 20px 0;
+}
+
+.title-holder-1 h2 {
+  position: relative;
+  background-color: var(--bg2);
+  color: var(--text-black-700);
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: 30px;
+  margin: 0 20px;
+}
+
+.title-holder-1 i {
+  background-color: var(--bg2);
+  font-size: 1.3rem;
+  color: var(--main4);
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.title-holder-1:hover {
+  cursor: pointer;
+}
+
+.title-holder-1::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main1);
+  width: 5px;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nextBtn {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  right: 0;
+}
+
+.nextBtn i {
+  font-size: 1.5rem;
+  color: var(--main4);
+}
+
+.nextBtn:hover {
+  cursor: pointer;
+}
+
+.prevBtn {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  border-radius: 50%;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  left: 0;
+}
+
+.prevBtn i {
+  font-size: 1.5rem;
+  color: var(--main4);
+}
+
+.prevBtn:hover {
+  cursor: pointer;
 }
 
 button {
@@ -335,8 +460,8 @@ body {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 25% 25% 25% 25%;
-      grid-template-columns: 25% 25% 25% 25%;
+  -ms-grid-columns: 40% 35% 25%;
+      grid-template-columns: 40% 35% 25%;
   width: 100%;
   height: 50px;
   border-radius: 10px;
@@ -388,24 +513,6 @@ body {
   width: 210px;
 }
 
-.main .main-body .body-navbar .status {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.main .main-body .body-navbar .status h4 {
-  color: var(--text-black-700);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-}
-
-.main .main-body .body-navbar .status h4 span {
-  color: var(--online);
-  font-size: 0.9rem;
-  letter-spacing: 2px;
-}
-
 .main .main-body .body-navbar .shortcuts {
   position: relative;
   width: 100%;
@@ -415,9 +522,9 @@ body {
 .main .main-body .body-navbar .shortcuts .shortcut-btns {
   position: relative;
   background-color: var(--main3);
-  color: var(--main4);
-  width: 40px;
-  height: 40px;
+  color: var(--bg2);
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   margin: 0 10px;
 }
@@ -452,124 +559,17 @@ body {
   cursor: pointer;
 }
 
-.main .main-body .info-cards {
+.main .main-body .main-body-content {
   position: relative;
   width: 100%;
   height: 75%;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 10px;
-  overflow: auto;
 }
 
-.main .main-body .info-cards .header-info-cards {
+.main .main-body .main-body-content .card-links-slideshow-container {
   position: relative;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (32%)[3];
-      grid-template-columns: repeat(3, 32%);
-  -ms-grid-rows: auto;
-      grid-template-rows: auto;
-  -webkit-column-gap: 10px;
-          column-gap: 10px;
   width: 100%;
-  height: 150px;
-  padding: 10px;
-}
-
-.main .main-body .info-cards .header-info-cards .info-card {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  padding: 15px;
-  background-color: var(--main3);
-  color: var(--text-white-900);
-  width: 100%;
-  height: 100%;
-  border-radius: 10px;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-.main .main-body .info-cards .header-info-cards .info-card i {
-  position: absolute;
-  color: var(--bg2);
-  font-size: 3rem;
-  top: 50%;
-  left: 50%;
-  opacity: 0.1;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.main .main-body .info-cards .header-info-cards .info-card h4 {
-  color: var(--text-white-700);
-  font-size: 1rem;
-}
-
-.main .main-body .info-cards .header-info-cards .info-card h3 {
-  color: var(--main1);
-  font-size: 2rem;
-  letter-spacing: 3px;
-  font-style: italic;
-}
-
-.main .main-body .info-cards .header-info-cards .info-card .info-card-btn {
-  position: absolute;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  background-color: var(--main3);
-  width: 40px;
-  height: 40px;
-  bottom: -20px;
-  left: 50%;
-  border-radius: 50%;
-  border: 5px solid var(--bg2);
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-}
-
-.main .main-body .info-cards .header-info-cards .info-card .info-card-btn i {
-  position: relative;
-  color: var(--bg2);
-  font-size: 0.9rem;
-  top: 0;
-  left: 0;
-  -webkit-transform: translate(0, 0);
-          transform: translate(0, 0);
-  opacity: 1;
-}
-
-.main .main-body .info-cards .header-info-cards .info-card .info-card-btn:hover {
-  cursor: pointer;
-}
-
-.main .main-body .info-cards .header-info-cards .info-card:hover {
-  -webkit-transform: translateY(-10px);
-          transform: translateY(-10px);
+  height: 250px;
+  padding: 0 50px;
 }
 
 .header {
