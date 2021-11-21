@@ -74,10 +74,19 @@
 
     i {
         font-size: 1.5rem;
-        color: var(--main4);
+        color: var(--main3);
     }
 
     &:hover {
         cursor: pointer;
     }
+}
+
+@mixin events {
+    position: relative;
+    background-color: var(--bg);
+    width: 90%;
+    height: 300px;
+    margin: 20px auto;
+    border-radius: 10px;
 }

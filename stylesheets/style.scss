@@ -63,6 +63,10 @@
     left: 0;
 }
 
+.events {
+    @include events;
+}
+
 button {
     border: none;
     outline: none;
@@ -300,6 +304,7 @@ body {
         height: 100%;
         padding: 20px;
         border-radius: 10px;
+        overflow: hidden;
 
         .body-navbar {
             position: relative;
@@ -394,6 +399,7 @@ body {
             position: relative;
             width: 100%;
             height: 75%;
+            overflow: auto;
 
             .card-links-slideshow-container {
                 position: relative;

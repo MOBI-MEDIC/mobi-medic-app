@@ -115,7 +115,7 @@
 
 .nextBtn i {
   font-size: 1.5rem;
-  color: var(--main4);
+  color: var(--main3);
 }
 
 .nextBtn:hover {
@@ -150,11 +150,20 @@
 
 .prevBtn i {
   font-size: 1.5rem;
-  color: var(--main4);
+  color: var(--main3);
 }
 
 .prevBtn:hover {
   cursor: pointer;
+}
+
+.events {
+  position: relative;
+  background-color: var(--bg);
+  width: 90%;
+  height: 300px;
+  margin: 20px auto;
+  border-radius: 10px;
 }
 
 button {
@@ -454,6 +463,7 @@ body {
   height: 100%;
   padding: 20px;
   border-radius: 10px;
+  overflow: hidden;
 }
 
 .main .main-body .body-navbar {
@@ -563,6 +573,7 @@ body {
   position: relative;
   width: 100%;
   height: 75%;
+  overflow: auto;
 }
 
 .main .main-body .main-body-content .card-links-slideshow-container {
