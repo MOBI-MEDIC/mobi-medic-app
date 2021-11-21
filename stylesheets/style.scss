@@ -8,8 +8,9 @@
 :root {
 
     //  default colors for the website
-    --bg: #638dc4;
-    --bg2: #e2f3f5; //d4ebee
+    //--bg3: #83a9af; //638dc4
+    --bg2: #e2f3f5;
+    --bg: #cad8da; //d4ebee
 
     --main1: #22d1ee;
     --main2: #3d5af1;
@@ -397,8 +398,38 @@ body {
             .card-links-slideshow-container {
                 position: relative;
                 width: 100%;
-                height: 250px;
-                padding: 0 50px;
+                height: 80px;
+                overflow: hidden;
+
+                .card-links-slides-holder {
+                    position: relative;
+                    @include flex(row);
+                    width: 300%;
+                    height: 100%;
+
+                    .card-links-slide {
+                        position: relative;
+                        @include space-between(row);
+                        width: 100%;
+                        height: 100%;
+                        padding: 10px 30px;
+
+                        .card-link {
+                            position: relative;
+                            background-color: var(--bg);
+                            width: 30%;
+                            height: 100%;
+                            margin: 0 10px;
+                            border-radius: 10px;
+                            transition: all 0.3s ease;
+
+                            &:hover {
+                                cursor: pointer;
+                                transform: scale(1.05);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

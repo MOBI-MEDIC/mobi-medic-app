@@ -11,6 +11,7 @@
 
     <link rel="stylesheet" href="stylesheets/style.css">
 
+    <script src="scripts/main.js" type="text/javascript" defer></script>
     <script src="https://kit.fontawesome.com/423d4bc754.js" crossorigin="anonymous"></script>
 
 </head>
@@ -154,18 +155,34 @@
                     <div class="card-links-slideshow-container">
 
                         <div class="card-links-slides-holder">
-                            <div class="card-links-slide"></div>
-                            <div class="card-links-slide"></div>
-                            <div class="card-links-slide"></div>
+                            <div class="card-links-slide">
+                                <div class="card-link"></div>
+                                <div class="card-link"></div>
+                                <div class="card-link"></div>
+                            </div>
+                            <div class="card-links-slide">
+                                <div class="card-link"></div>
+                                <div class="card-link"></div>
+                                <div class="card-link"></div>
+                            </div>
+                            <div class="card-links-slide">
+                                <div class="card-link"></div>
+                                <div class="card-link"></div>
+                                <div class="card-link"></div>
+                            </div>
                         </div>
 
-                        <div class="nextBtn">
+                        <div class="nextBtn" id="card-links-nextbtn">
                             <i class="fas fa-angle-right"></i>
                         </div>
-                        <div class="prevBtn">
+                        <div class="prevBtn" id="card-links-prevbtn">
                             <i class="fas fa-angle-left"></i>
                         </div>
                     </div>
+
+                    <div class="events today-events"></div>
+                    <div class="events tomorrow-events"></div>
+                    <div class="events upcoming-events"></div>
                 </div>
 
             </div>
