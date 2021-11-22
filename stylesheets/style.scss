@@ -455,7 +455,7 @@ body {
                             &::before {
                                 content: "";
                                 position: absolute;
-                                background-color: var(--main1);
+                                background-color: var(--bg2);
                                 background-image: url("../images/markus-frieauff-IJ0KiXl4uys-unsplash.jpg");
                                 background-position: center;
                                 background-size: cover;
@@ -636,7 +636,6 @@ body {
                                         color: var(--text-black-300);
                                     }
 
-                                    .apt-doc {}
                                 }
                             }
                         }
