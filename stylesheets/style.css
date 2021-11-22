@@ -14,13 +14,15 @@
   --online: lime;
   --offline: red;
   --text-black-900: #000000;
-  --text-black-700: #1a1a1a;
+  --text-black-700: #272727;
   --text-black-300: #858585;
   --text-white-900: #ffffff;
   --text-white-700: #c4c4c4;
   --text-white-300: #686868;
   --outer-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
   --outer-shadow-0: 0 0 0 rgba(0, 0, 0, 0.2);
+  --outer-shadow-round: 0 15px 35px rgba(0, 0, 0, 0.2);
+  --outer-shadow-round-0: 0 0 0 rgba(0, 0, 0, 0.2);
   --container-index: 50;
   --navbar-index: 40;
 }
@@ -159,7 +161,7 @@
 
 .events {
   position: relative;
-  background-color: var(--bg);
+  background-color: var(--bg2);
   width: 90%;
   height: 300px;
   margin: 20px auto;
@@ -666,27 +668,51 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: var(--bg);
   width: 30%;
   height: 100%;
   margin: 0 10px;
   border-radius: 10px;
+  overflow: hidden;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
+.main .main-body .main-body-content .card-links-slideshow-container .card-links-slides-holder .card-links-slide .card-link::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main1);
+  background-image: url("../images/markus-frieauff-IJ0KiXl4uys-unsplash.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-filter: brightness(30%);
+          filter: brightness(30%);
+  background-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
 .main .main-body .main-body-content .card-links-slideshow-container .card-links-slides-holder .card-links-slide .card-link:hover {
   cursor: pointer;
-  -webkit-animation: rotate 0.3s ease 1;
-          animation: rotate 0.3s ease 1;
+}
+
+.main .main-body .main-body-content .card-links-slideshow-container .card-links-slides-holder .card-links-slide .card-link:hover::before {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .main .main-body .main-body-content .card-links-slideshow-container .card-links-slides-holder .card-links-slide .card-link i {
+  color: var(--text-white-900);
   margin: 0 10px;
 }
 
 .main .main-body .main-body-content .card-links-slideshow-container .card-links-slides-holder .card-links-slide .card-link h3 {
-  color: var(--main3);
+  color: var(--text-white-900);
   font-size: 0.9rem;
 }
 
@@ -734,7 +760,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: var(--bg2);
+  background-color: var(--main3);
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -766,7 +792,6 @@ body {
 
 .main .main-body .main-body-content .appointments .appointment-cards {
   position: relative;
-  background-color: red;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -793,12 +818,129 @@ body {
 
 .main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
   height: 100%;
 }
 
-.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide:nth-child(odd) {
-  background-color: blue;
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card {
+  position: relative;
+  background-color: var(--bg2);
+  width: 250px;
+  height: 90%;
+  -webkit-box-shadow: var(--outer-shadow-round);
+          box-shadow: var(--outer-shadow-round);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .apt-card-menu-icon {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 35px;
+  height: 35px;
+  top: 0;
+  right: 0;
+  border-radius: 50%;
+  z-index: var(--navbar-index);
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .apt-card-menu-icon i {
+  color: var(--main3);
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .apt-card-menu-icon:hover {
+  cursor: pointer;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-title {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 5px 20px 5px 0;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-title h4 {
+  color: var(--text-black-700);
+  font-size: 0.8rem;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-date {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 10px auto;
+  padding: 5px 20px 5px 0;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-date h4 {
+  color: var(--text-black-300);
+  font-size: 0.8rem;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-date h4 i {
+  margin: 0 5px;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-paragraph {
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding: 5px;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-details {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: auto;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-details h4 {
+  font-size: 0.7rem;
+  color: var(--text-black-300);
+}
+
+.main .main-body .main-body-content .appointments .appointment-cards .appointment-cards-slides-holder .appointment-cards-slide .appointment-card .appointment-details h4 span {
+  color: var(--main4);
 }
 
 .header {

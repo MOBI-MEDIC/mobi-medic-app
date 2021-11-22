@@ -23,7 +23,7 @@
 
     //  text colors
     --text-black-900: #000000;
-    --text-black-700: #1a1a1a;
+    --text-black-700: #272727;
     --text-black-300: #858585;
 
     --text-white-900: #ffffff;
@@ -34,6 +34,9 @@
     //  shadow
     --outer-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
     --outer-shadow-0: 0 0 0 rgba(0, 0, 0, 0.2);
+
+    --outer-shadow-round: 0 15px 35px rgba(0, 0, 0, 0.2);
+    --outer-shadow-round-0: 0 0 0 rgba(0, 0, 0, 0.2);
 
     //  z-index
     --container-index: 50;
@@ -442,24 +445,47 @@ body {
                         .card-link {
                             position: relative;
                             @include flex(row);
-                            background-color: var(--bg);
                             width: 30%;
                             height: 100%;
                             margin: 0 10px;
                             border-radius: 10px;
+                            overflow: hidden;
                             transition: all 0.3s ease;
+
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                background-color: var(--main1);
+                                background-image: url("../images/markus-frieauff-IJ0KiXl4uys-unsplash.jpg");
+                                background-position: center;
+                                background-size: cover;
+                                background-repeat: no-repeat;
+                                filter: brightness(30%);
+                                background-blend-mode: multiply;
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                                transition: all 0.3s ease;
+                                z-index: -1;
+                            }
 
                             &:hover {
                                 cursor: pointer;
-                                animation: rotate 0.3s ease 1;
+                                //animation: rotate 0.3s ease 1;
+
+                                &::before {
+                                    transform: scale(1.1);
+                                }
                             }
 
                             i {
+                                color: var(--text-white-900);
                                 margin: 0 10px;
                             }
 
                             h3 {
-                                color: var(--main3);
+                                color: var(--text-white-900);
                                 font-size: 0.9rem;
                             }
                         }
@@ -482,7 +508,7 @@ body {
                     .apt-btn {
                         position: relative;
                         @include flex(row);
-                        background-color: var(--bg2);
+                        background-color: var(--main3);
                         width: 50px;
                         height: 50px;
                         border-radius: 50%;
@@ -512,7 +538,6 @@ body {
 
                 .appointment-cards {
                     position: relative;
-                    background-color: red;
                     width: 100%;
                     height: 100%;
                     overflow: hidden;
@@ -525,11 +550,94 @@ body {
 
                         .appointment-cards-slide {
                             position: relative;
+                            @include space-evenly(row);
                             width: 100%;
                             height: 100%;
 
-                            &:nth-child(odd) {
-                                background-color: blue;
+                            .appointment-card {
+                                position: relative;
+                                background-color: var(--bg2);
+                                width: 250px;
+                                height: 90%;
+                                box-shadow: var(--outer-shadow-round);
+                                border-radius: 10px;
+                                padding: 10px;
+
+                                .apt-card-menu-icon {
+                                    position: absolute;
+                                    @include flex(row);
+                                    width: 35px;
+                                    height: 35px;
+                                    top: 0;
+                                    right: 0;
+                                    border-radius: 50%;
+                                    z-index: var(--navbar-index);
+
+                                    i {
+                                        color: var(--main3);
+                                    }
+
+                                    &:hover {
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                .appointment-title {
+                                    position: relative;
+                                    width: 100%;
+                                    height: auto;
+                                    padding: 5px 20px 5px 0;
+
+                                    h4 {
+                                        color: var(--text-black-700);
+                                        font-size: 0.8rem;
+                                    }
+                                }
+
+                                .appointment-date {
+                                    position: relative;
+                                    width: 100%;
+                                    height: auto;
+                                    margin: 10px auto;
+                                    padding: 5px 20px 5px 0;
+
+                                    h4 {
+                                        color: var(--text-black-300);
+                                        font-size: 0.8rem;
+
+                                        i {
+                                            margin: 0 5px;
+                                        }
+                                    }
+                                }
+
+                                .appointment-paragraph {
+                                    position: relative;
+                                    width: 100%;
+                                    height: auto;
+                                    padding: 5px;
+                                }
+
+                                .appointment-details {
+                                    position: relative;
+                                    @include space-between(row);
+                                    width: 100%;
+                                    height: auto;
+                                    padding: 10px;
+                                    margin: 5px auto;
+
+                                    h4 {
+
+                                        span {
+                                            color: var(--main4);
+                                        }
+
+                                        font-size: 0.7rem;
+                                        color: var(--text-black-300);
+                                    }
+
+                                    .apt-doc {}
+                                }
                             }
                         }
                     }

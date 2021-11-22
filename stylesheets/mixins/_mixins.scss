@@ -19,6 +19,13 @@
     flex-direction: $x;
 }
 
+@mixin space-evenly($x) {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: $x;
+}
+
 @mixin title-holder-1 {
     position: relative;
     @include space-between(row);
@@ -84,7 +91,7 @@
 
 @mixin events {
     position: relative;
-    background-color: var(--bg);
+    background-color: var(--bg2);
     width: 90%;
     height: 300px;
     margin: 20px auto;
