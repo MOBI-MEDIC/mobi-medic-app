@@ -1,7 +1,7 @@
 @import "mixins/mixins";
 
 @font-face {
-    font-family: 'olly';
+    font-family: serif, 'olly';
     src: url('../fonts/Poppins-Regular.ttf');
 }
 
@@ -81,7 +81,7 @@ button {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--bg2);
+    background-color: var(--main3);
     border-radius: 30px;
 }
 
@@ -361,6 +361,25 @@ body {
                     height: 35px;
                     border-radius: 50%;
                     margin: 0 10px;
+
+                    &:nth-child(2) {
+                        &::before {
+                            content: "5";
+                            position: absolute;
+                            @include flex(row);
+                            background-color: var(--main3);
+                            color: var(--main1);
+                            text-align: center;
+                            font-size: 0.7rem;
+                            font-weight: 700;
+                            width: 15px;
+                            height: 15px;
+                            top: -5px;
+                            right: -5px;
+                            border: 2px solid var(--text-white-900);
+                            border-radius: 50%;
+                        }
+                    }
                 }
             }
 
@@ -422,6 +441,7 @@ body {
 
                         .card-link {
                             position: relative;
+                            @include flex(row);
                             background-color: var(--bg);
                             width: 30%;
                             height: 100%;
@@ -431,7 +451,16 @@ body {
 
                             &:hover {
                                 cursor: pointer;
-                                transform: scale(1.05);
+                                animation: rotate 0.3s ease 1;
+                            }
+
+                            i {
+                                margin: 0 10px;
+                            }
+
+                            h3 {
+                                color: var(--main3);
+                                font-size: 0.9rem;
                             }
                         }
                     }
@@ -504,5 +533,19 @@ body {
 
     100% {
         transform: translate(0, -50%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0);
     }
 }
