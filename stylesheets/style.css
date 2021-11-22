@@ -702,6 +702,8 @@ body {
 }
 
 .main .main-body .main-body-content .card-links-slideshow-container .card-links-slides-holder .card-links-slide .card-link:hover::before {
+  -webkit-filter: brightness(70%);
+          filter: brightness(70%);
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }

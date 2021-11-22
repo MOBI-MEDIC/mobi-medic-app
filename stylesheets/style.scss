@@ -475,6 +475,7 @@ body {
                                 //animation: rotate 0.3s ease 1;
 
                                 &::before {
+                                    filter: brightness(70%);
                                     transform: scale(1.1);
                                 }
                             }
